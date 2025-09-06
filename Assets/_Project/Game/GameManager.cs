@@ -1,3 +1,5 @@
+using System.Collections; 
+using System.Collections.Generic;
 using FestivalGrounds.Core;
 using FestivalGrounds.Data;
 using FestivalGrounds.Economy;
@@ -12,19 +14,24 @@ namespace FestivalGrounds.Game
     {
         [Header("Configuration")]
         [SerializeField] private EconomyConfigSO _economyConfig;
+        
+        // Add scene configuration here
+        [Header("Scene Management")]
+        [SerializeField] private string _mainMenuSceneName = "MainMenu";
+        [SerializeField] private List<string> _gameplaySceneNames = new List<string> { "World", "UI" };
 
-        private static GameManager _instance;
+        public static GameManager Instance { get; private set; } // Change _instance to a public property
         private IGameStateService _gameStateService;
         private ITimeService _timeService;
 
         private void Awake()
         {
-            if (_instance != null)
+            if (Instance != null)
             {
                 Destroy(gameObject);
                 return;
             }
-            _instance = this;
+            Instance = this; // Use the public property
             DontDestroyOnLoad(gameObject);
 
             InitializeServices();
@@ -32,7 +39,32 @@ namespace FestivalGrounds.Game
 
         private void Start()
         {
-            LoadScenes();
+            SceneManager.LoadScene(_mainMenuSceneName, LoadSceneMode.Additive);
+        }
+
+        public void StartNewGame()
+        {
+            StartCoroutine(LoadGameplayScenes());
+        }
+
+        private IEnumerator LoadGameplayScenes()
+        {
+            // 1. Unload the Main Menu scene.
+            Debug.Log("Unloading Main Menu...");
+            yield return SceneManager.UnloadSceneAsync(_mainMenuSceneName);
+
+            // 2. Load all the necessary gameplay scenes additively.
+            Debug.Log("Loading Gameplay Scenes...");
+            foreach (var sceneName in _gameplaySceneNames)
+            {
+                yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+            }
+
+            // 3. Set the "active" scene. 
+            // This determines where new objects are instantiated and affects lighting settings.
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName(_gameplaySceneNames[0])); // e.g., "World"
+
+            Debug.Log("Gameplay scenes loaded.");
             _gameStateService.SetState(GameStateType.BuildMode);
         }
 
@@ -65,13 +97,5 @@ namespace FestivalGrounds.Game
             Debug.Log("All core services initialized.");
         }
 
-        private void LoadScenes()
-        {
-            for (int i = 1; i < SceneManager.sceneCountInBuildSettings; i++)
-            {
-                SceneManager.LoadScene(i, LoadSceneMode.Additive);
-            }
-        }
     }
 }
-

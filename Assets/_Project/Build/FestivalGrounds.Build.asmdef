@@ -1,0 +1,21 @@
+{
+    "name": "FestivalGrounds.Build",
+    "rootNamespace": "",
+    "references": [
+        "GUID:dbd672694eeb045b990b4282a0887daf",
+        "GUID:f9d4849bcff9740cb97553cb2dae4056",
+        "GUID:3c927511b4a6447d3935723950402858",
+        "GUID:ad1d7cf953b544179a67159cd63463f6",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:bf12deff2ff2d4dbcb8bea923bc26e18"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,17 @@
+{
+    "name": "FestivalGrounds.Economy",
+    "rootNamespace": "",
+    "references": [
+        "GUID:dbd672694eeb045b990b4282a0887daf",
+        "GUID:ad1d7cf953b544179a67159cd63463f6"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

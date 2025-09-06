@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f211697e3ad847bcae74da036279cfd, type: 3}
+  m_Name: StageConfig
+  m_EditorClassIdentifier: 
+  Name: Stage
+  Type: 4
+  Cost: 10000
+  Capacity: 500
+  Prefab: {fileID: 7506111557093880499, guid: 1d168b8b4f2e6427aa2b1b1fbe2e9767, type: 3}
+  GhostPrefab: {fileID: 4180462635328418082, guid: e5d9232a181ec481ea412ad0d49d43e6, type: 3}

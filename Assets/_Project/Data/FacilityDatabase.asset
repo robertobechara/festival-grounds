@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f0c7b7298cd4cd4a321fdc487bf8fa, type: 3}
+  m_Name: FacilityDatabase
+  m_EditorClassIdentifier: FestivalGrounds.Data::FestivalGrounds.Data.FacilityDatabaseSO
+  AllFacilityConfigs:
+  - {fileID: 11400000, guid: 058f0898d0f99412e9fec1bff80a2d00, type: 2}
+  - {fileID: 11400000, guid: 408cfd6b0bbac4d2498dbd7a2eae845e, type: 2}
+  - {fileID: 11400000, guid: f7f12ab4071e34fcf920a1934246f612, type: 2}
+  - {fileID: 11400000, guid: 863f2967b35554af19e6ba18d2e8b1d1, type: 2}

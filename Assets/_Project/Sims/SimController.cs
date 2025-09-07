@@ -271,6 +271,37 @@ namespace FestivalGrounds.Sims
 
         #endregion
 
+
+        #region State Saving
+
+        public SimData GetSimData()
+        {
+            SimData simData = new SimData
+            {
+                Position = transform.position,
+                Rotation = transform.rotation,
+                Hunger = _hunger,
+                Bladder = _bladder,
+                Energy = _energy
+            };
+            return simData; 
+        }
+
+        public void LoadState(SimData simData)
+        {
+            _agent.Warp(simData.Position);
+            transform.rotation = simData.Rotation;
+            _hunger = Mathf.Clamp(simData.Hunger, 0f, _config.MaxNeedValue);
+            _bladder = Mathf.Clamp(simData.Bladder, 0f, _config.MaxNeedValue);
+            _energy = Mathf.Clamp(simData.Energy, 0f, _config.MaxNeedValue);
+            
+            // We still didn't save the old tent assingment, let's find a new tent for the sim.
+            AssignAndGoToTent();
+        }
+
+        #endregion
+
+
         #region Debugging
 
         private void OnDrawGizmos()

@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 71f14a2d79f732f4d9893ef1b911f4ff, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -351,6 +351,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &783617791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 783617792}
+  m_Layer: 0
+  m_Name: _PlacedFacilities
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &783617792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783617791}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 835, y: 449.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &829415508
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,6 +664,52 @@ Transform:
   - {fileID: 534188198}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 20.638, y: -213.202, z: 5.024}
+--- !u!1 &1050898510
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1050898512}
+  - component: {fileID: 1050898511}
+  m_Layer: 0
+  m_Name: _WorldOrganizer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1050898511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050898510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429de194776434226af515891317256f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FestivalGrounds.World::FestivalGrounds.World.WorldOrganizer
+  SimsParent: {fileID: 1211097847}
+  PlacedFacilitiesParent: {fileID: 783617792}
+--- !u!4 &1050898512
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050898510}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 835, y: 449.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1211097846
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,6 +975,7 @@ GameObject:
   - component: {fileID: 2091544003}
   - component: {fileID: 2091544002}
   - component: {fileID: 2091544005}
+  - component: {fileID: 2091544006}
   m_Layer: 0
   m_Name: _ServiceManagers
   m_TagString: Untagged
@@ -929,7 +1007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ea346cb53224815b47b48e9645acba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _placedFacilitiesParent: {fileID: 0}
+  _placedFacilitiesParent: {fileID: 783617792}
   _terrainLayer:
     serializedVersion: 2
     m_Bits: 1
@@ -967,6 +1045,22 @@ MonoBehaviour:
   _economyConfig: {fileID: 11400000, guid: cc474d9fe3b8a473ab71f20b1a905983, type: 2}
   _spawnPoint: {fileID: 1471386182}
   _simsParent: {fileID: 1211097847}
+--- !u!114 &2091544006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091544001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bae53234bfea420dab541520e561359, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FestivalGrounds.Core::FestivalGrounds.Core.InputPicker
+  selectableMask:
+    serializedVersion: 2
+    m_Bits: 8
+  worldCamera: {fileID: 829415510}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -976,7 +1070,9 @@ SceneRoots:
   - {fileID: 833745229}
   - {fileID: 542233761}
   - {fileID: 1471386182}
+  - {fileID: 1211097847}
+  - {fileID: 783617792}
   - {fileID: 1837622631}
   - {fileID: 1002034149}
   - {fileID: 2091544004}
-  - {fileID: 1211097847}
+  - {fileID: 1050898512}

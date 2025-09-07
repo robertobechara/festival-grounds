@@ -35,7 +35,6 @@ namespace FestivalGrounds.Sims
         private EventBus _eventBus;
         private ITimeService _timeService; // Reference to our custom clock
         private IEconomyService _economyService; 
-        private int _currentSimCount = 0;
         private Coroutine _spawnLoop;
         
 
@@ -75,7 +74,7 @@ namespace FestivalGrounds.Sims
 
         private IEnumerator SpawnLoop()
         {
-            while (_currentSimCount < _maxSims)
+            while (_simsParent.childCount < _maxSims)
             {
                 // We now wait for a manual timer driven by our custom clock,
                 // instead of using WaitForSeconds().
@@ -94,9 +93,9 @@ namespace FestivalGrounds.Sims
             if (_simPrefab == null || _spawnPoint == null || _simsParent == null || _simConfig == null) return;
 
             _economyService.AddFunds(_economyConfig.TicketPrice);
-
+            
+            int _currentSimCount = _simsParent.childCount;
             GameObject simInstance = Instantiate(_simPrefab, _spawnPoint.position, Quaternion.identity, _simsParent);
-            _currentSimCount++;
             simInstance.name = $"Sim_{_currentSimCount}";
 
             if (simInstance.TryGetComponent(out SimController simController))

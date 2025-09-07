@@ -164,6 +164,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _economyConfig: {fileID: 11400000, guid: cc474d9fe3b8a473ab71f20b1a905983, type: 2}
+  _facilityDatabase: {fileID: 11400000, guid: 57a31dea5063342d396a3cc170f897b1, type: 2}
+  _simConfig: {fileID: 11400000, guid: 88bef8305b3af449d9097fcb8c28a98f, type: 2}
+  _simPrefab: {fileID: 4608375001929483320, guid: 15a8b43cb096a4bb59a754fb714e6c09, type: 3}
+  _mainMenuSceneName: MainMenu
+  _gameplaySceneNames:
+  - World
+  - UI
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

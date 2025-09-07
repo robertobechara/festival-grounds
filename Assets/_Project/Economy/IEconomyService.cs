@@ -5,6 +5,7 @@ namespace FestivalGrounds.Economy
         int CurrentBudget { get; }
         void AddFunds(int amount);
         bool TrySpend(int amount); 
+        void SetBudget(int amount);
     }
 }
 

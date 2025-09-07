@@ -13,5 +13,7 @@ namespace FestivalGrounds.Core
         void Resume();
         void SetTimeScale(float scale);
         void Tick(float realDeltaTime);
+
+        void SetTime(DateTime time);
     }
 }

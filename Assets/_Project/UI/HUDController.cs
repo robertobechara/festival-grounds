@@ -145,6 +145,7 @@ namespace FestivalGrounds.UI
             var timeService = ServiceLocator.GetService<ITimeService>();
             timeService.SetTimeScale(scale);
         }
+
         // Public method for the Fast Forward button's OnClick event
         public void OnFastForwardClicked()
         {

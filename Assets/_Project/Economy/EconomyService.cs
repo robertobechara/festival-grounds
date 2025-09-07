@@ -41,6 +41,12 @@ namespace FestivalGrounds.Economy
 
             return false;
         }
+
+        public void SetBudget(int amount)
+        {
+            _currentBudget = amount;
+            _eventBus.Publish(new BudgetChangedEvent(_currentBudget));
+        }
     }
 }
 

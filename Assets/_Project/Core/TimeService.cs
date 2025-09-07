@@ -71,5 +71,12 @@ namespace FestivalGrounds.Core
             // Broadcast the change to any system that is listening.
             _eventBus.Publish(new TimeScaleChangedEvent(_timeScale));
         }
+
+        public void SetTime(DateTime time)
+        {
+            CurrentTime = time;
+            _lastMinute = CurrentTime.Minute;
+            _eventBus.Publish(new TimeUpdatedEvent(CurrentTime));
+        }
     }
 }

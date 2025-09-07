@@ -1,12 +1,31 @@
 
 using UnityEngine;
+using UnityEngine.UI;
+using System.IO;
 using FestivalGrounds.Game;
 
 public class MainMenuUI : MonoBehaviour
 {
+    [SerializeField] private Button _loadGameButton;
+
+    private void Start()
+    {
+        // Check if a save file exists and enable/disable the load button accordingly.
+        string savePath = Path.Combine(Application.persistentDataPath, "savegame.json");
+        if (_loadGameButton != null)
+        {
+            _loadGameButton.interactable = File.Exists(savePath);
+        }
+    }
+
     public void OnNewGameButtonClicked()
     {
         GameManager.Instance.StartNewGame();
+    }
+
+    public void OnLoadGameButtonClicked()
+    {
+        GameManager.Instance.LoadSavedGame();
     }
 
     public void OnQuitButtonClicked()
